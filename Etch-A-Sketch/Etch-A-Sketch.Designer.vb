@@ -35,8 +35,10 @@ Partial Class Etchy_Sketchy
         Me.ClearToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DrawBox = New System.Windows.Forms.PictureBox()
         DrawWaveform = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.DrawBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DrawWaveform
@@ -47,6 +49,7 @@ Partial Class Etchy_Sketchy
         DrawWaveform.TabIndex = 1
         DrawWaveform.Text = "Draw Wave form"
         DrawWaveform.UseVisualStyleBackColor = True
+        AddHandler DrawWaveform.Click, AddressOf Me.DrawWaveform_Click
         '
         'ColorSelect
         '
@@ -135,11 +138,20 @@ Partial Class Etchy_Sketchy
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
+        'DrawBox
+        '
+        Me.DrawBox.Location = New System.Drawing.Point(12, 27)
+        Me.DrawBox.Name = "DrawBox"
+        Me.DrawBox.Size = New System.Drawing.Size(776, 307)
+        Me.DrawBox.TabIndex = 5
+        Me.DrawBox.TabStop = False
+        '
         'Etchy_Sketchy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.DrawBox)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.Clear)
         Me.Controls.Add(DrawWaveform)
@@ -150,6 +162,7 @@ Partial Class Etchy_Sketchy
         Me.Text = "Etchy_Sketchy"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.DrawBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -167,4 +180,5 @@ Partial Class Etchy_Sketchy
     Friend WithEvents ClearToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DrawBox As PictureBox
 End Class
