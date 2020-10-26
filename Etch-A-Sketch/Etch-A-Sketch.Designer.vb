@@ -104,7 +104,7 @@ Partial Class Etchy_Sketchy
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(116, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'EdiToolStripMenuItem
@@ -117,19 +117,19 @@ Partial Class Etchy_Sketchy
         'SelectColorToolStripMenuItem
         '
         Me.SelectColorToolStripMenuItem.Name = "SelectColorToolStripMenuItem"
-        Me.SelectColorToolStripMenuItem.Size = New System.Drawing.Size(199, 26)
+        Me.SelectColorToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.SelectColorToolStripMenuItem.Text = "Select Color"
         '
         'DrawWaveformToolStripMenuItem
         '
         Me.DrawWaveformToolStripMenuItem.Name = "DrawWaveformToolStripMenuItem"
-        Me.DrawWaveformToolStripMenuItem.Size = New System.Drawing.Size(199, 26)
+        Me.DrawWaveformToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.DrawWaveformToolStripMenuItem.Text = "Draw Waveform"
         '
         'ClearToolStripMenuItem
         '
         Me.ClearToolStripMenuItem.Name = "ClearToolStripMenuItem"
-        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(199, 26)
+        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.ClearToolStripMenuItem.Text = "Clear"
         '
         'HelpToolStripMenuItem
@@ -164,7 +164,7 @@ Partial Class Etchy_Sketchy
         Me.AboutBox.ItemHeight = 16
         Me.AboutBox.Location = New System.Drawing.Point(0, 32)
         Me.AboutBox.Name = "AboutBox"
-        Me.AboutBox.Size = New System.Drawing.Size(287, 180)
+        Me.AboutBox.Size = New System.Drawing.Size(743, 132)
         Me.AboutBox.TabIndex = 6
         '
         'Etchy_Sketchy
