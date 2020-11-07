@@ -4,14 +4,17 @@
 'Etch-a-Sketch
 'https://github.com/CalvinAC/Etch-A-Sketch
 
+Option Strict On
+Option Explicit On
+
 Public Class Etchy_Sketchy
 
     Dim drawPen As New System.Drawing.Pen(Color.Black, 1)
     Dim erasePen As New System.Drawing.Pen(Color.FromName("control"), 50)
     Dim sinePen As New Pen(Color.Black, 10)
-    Dim cosinePen As New Pen(Color.Black, 10)
+    Dim cosinePen As New Pen(Color.Black, 10) '- Probably only need one pen here - TJR
     Dim tangentPen As New Pen(Color.Black, 10)
-    Dim g As Graphics = Me.CreateGraphics
+    Dim g As Graphics ' = Me.CreateGraphics   -- Associating the graphics object with the Form here may cause problems - TJR
     Dim lastX As Integer
     Dim lastY As Integer
 
@@ -85,29 +88,18 @@ Public Class Etchy_Sketchy
         lastY = 0
     End Sub
 
-
-    Private Sub DrawWaveform_Click(sender As Object, e As EventArgs)
-        WaveformDrawings()
-    End Sub
-    Private Sub DrawWaveformToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DrawWaveformToolStripMenuItem.Click
+    Private Sub DrawWaveformToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DrawWaveformToolStripMenuItem.Click, DrawWaveFormsButton.Click
         WaveformDrawings()
     End Sub
 
-    Private Sub ColorSelect_Click(sender As Object, e As EventArgs) Handles ColorSelect.Click
+    Private Sub ColorSelect_Click(sender As Object, e As EventArgs) Handles ColorSelect.Click, SelectColorToolStripMenuItem.Click '- handles any event to choose color
         ColorChooser()
     End Sub
 
-    Private Sub SelectColorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelectColorToolStripMenuItem.Click
-        ColorChooser()
-    End Sub
-
-    Private Sub Etchy_Sketchy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Etchy_Sketchy_Load(sender As Object, e As EventArgs) Handles MyBase.Load, AboutToolStripMenuItem.MouseLeave
         AboutBox.Visible = False
     End Sub
 
-    Private Sub AboutToolStripMenuItem_MouseLeave(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.MouseLeave
-        AboutBox.Visible = False
-    End Sub
     ' Displays tool tips to the user when hovered over
     Private Sub AboutToolStripMenuItem_MouseHover(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.MouseHover
         AboutBox.Visible = True
@@ -121,7 +113,7 @@ Public Class Etchy_Sketchy
     End Sub
 
     ' Shakes the picture box when the user clears the drawings
-    Private Sub ClearToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearToolStripMenuItem.Click
+    Private Sub ClearToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearToolStripMenuItem.Click, Clear.Click
 
         For i = 1 To 100
             DrawBox.Left = DrawBox.Left + 10
@@ -136,24 +128,9 @@ Public Class Etchy_Sketchy
 
         DrawBox.Image = Nothing
     End Sub
-    Private Sub Clear_Click(sender As Object, e As EventArgs) Handles Clear.Click
-        For i = 1 To 100
-            DrawBox.Left = DrawBox.Left + 10
-            DrawBox.Top = DrawBox.Top + 10
-            DrawBox.Left = DrawBox.Left - 20
-            DrawBox.Top = DrawBox.Top - 20
-            DrawBox.Left = DrawBox.Left + 20
-            DrawBox.Top = DrawBox.Top + 20
-            DrawBox.Left = DrawBox.Left - 10
-            DrawBox.Top = DrawBox.Top - 10
-        Next
-        DrawBox.Image = Nothing
-    End Sub
-    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click, ExitToolStripMenuItem.Click
         Me.Close()
     End Sub
 
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-        Me.Close()
-    End Sub
 End Class
